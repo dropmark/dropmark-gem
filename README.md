@@ -30,7 +30,7 @@ This gem allows you to interact with the Dropmark API.
 ```ruby
 require 'dropmark'
 
-# authentication application
+# authenticate application
 Dropmark.configure do |config|
   config.api_key    = 'API_KEY'
   config.api_base   = 'https://api.dropmark.com/v1'  # optional

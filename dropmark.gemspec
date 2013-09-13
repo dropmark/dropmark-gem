@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'dropmark/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "Dropmark"
+  gem.name          = "dropmark"
   gem.version       = Dropmark::VERSION
   gem.authors       = ["dropmark"]
   gem.email         = ["api@dropmark.com"]

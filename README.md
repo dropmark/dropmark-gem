@@ -34,12 +34,13 @@ require 'dropmark'
 Dropmark.configure do |config|
   config.api_key    = 'API_KEY'
   config.api_base   = 'https://api.dropmark.com/v1'  # optional
-  config.user_id    = 'USER_ID'                      # optional
-  config.user_token = 'USER_TOKEN'                   # optional
+  config.user_id    = 'USER_ID'                      # optional, see below to retrieve
+  config.user_token = 'USER_TOKEN'                   # optional, see below to retrieve
 end
 
-# authenticate user (store user.id and user.token for future use, never store password)
+# retreive user token if needed
 user = Dropmark::User.auth(email: 'EMAIL', password: 'PASSWORD')
+# note: store user.id and user.token for future use, never store password
 
 # get authenticated user
 user = Dropmark::User.find('me')

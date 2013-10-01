@@ -74,6 +74,11 @@ items = Dropmark::Item.where(collection_id: 133727)
 # get item by id
 item = Dropmark::Item.find(2139403)
 
+# sort items in collection by item ids
+items = collection.sort_items([101, 102, 103])
+# or sort items without fetching collection
+items = Dropmark::Item.sort(collection_id, [101, 102, 103])
+
 # create new item
 item = collection.items.create(content: 'http://dropmark.com')
 # or

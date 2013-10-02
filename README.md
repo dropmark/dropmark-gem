@@ -66,6 +66,9 @@ collection.destroy
 # or delete collection by id
 Dropmark::Collection.destroy_existing(133727)
 
+# sort collections by ids
+collections = Dropmark::Collection.sort([101, 102, 103])
+
 # get items in collection
 items = collection.items
 # or get items without fetching collection

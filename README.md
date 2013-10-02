@@ -92,7 +92,7 @@ item = Dropmark::Item.create(
   description:   'Dropmark logo',                                # optional
   link:          'http://dropmark.com',                          # optional
   thumbnail:     'http://dropmark.com/assets/images/logo.png',   # optional
-  shareable:     true                                            # optional
+  shareable:     'true'                                          # optional
 )
 
 # upload file item

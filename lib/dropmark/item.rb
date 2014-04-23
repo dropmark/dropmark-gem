@@ -13,6 +13,7 @@ module Dropmark
     store_metadata :_metadata # conflicted with actual item metadata
     
     after_find do |i|
+      i.metadata = i._metadata
       begin
         i.created_at = Time.parse(i.created_at)
         i.updated_at = Time.parse(i.updated_at)

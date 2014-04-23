@@ -10,9 +10,11 @@ module Dropmark
     has_many :comments
     custom_get :count
     
+    method_for :update, :post
+    
     store_metadata :_metadata # conflicted with actual item metadata
     
-    after_find do |i|
+    after_initialize do |i|
       i.metadata = i._metadata unless i.has_attribute?('metadata')
       begin
         i.created_at = Time.parse(i.created_at)

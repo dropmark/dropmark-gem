@@ -12,6 +12,14 @@ module Dropmark
     has_many :collections
     custom_get :contacts
     
+    after_find do |i|
+      begin
+        i.created_at = Time.parse(i.created_at)
+        i.updated_at = Time.parse(i.updated_at)
+      rescue
+      end
+    end
+    
     def request_path
       if !Dropmark.user_id.nil? and self.try(:id) == Dropmark.user_id
         "users/me"

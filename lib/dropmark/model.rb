@@ -3,8 +3,8 @@ module Dropmark
     include Her::Model
     uses_api Dropmark.api
     
-    def to_json
-      MultiJson.dump(self.attributes)
+    def to_json(options = {})
+      MultiJson.dump(self.attributes, options)
     end
   end
 end

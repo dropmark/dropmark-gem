@@ -38,6 +38,7 @@ module Dropmark
       c.use Faraday::Adapter::NetHttp
       c.use Dropmark::Error::RaiseError
     end
+    require 'dropmark/model'
     require 'dropmark/collection'
     require 'dropmark/comment'
     require 'dropmark/item'

@@ -1,7 +1,5 @@
 module Dropmark
-  class User
-    include Her::Model
-    uses_api Dropmark.api
+  class User < Model
     
     attributes :name, :email, :password, :username
     validates :name, presence: true

@@ -1,7 +1,5 @@
 module Dropmark
-  class Collection
-    include Her::Model
-    uses_api Dropmark.api
+  class Collection < Model
     
     has_many :users
     has_many :items

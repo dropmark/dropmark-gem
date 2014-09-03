@@ -1,17 +1,19 @@
 module Dropmark
   class Item < Model
-    
+    include Her::Model
+    uses_api Dropmark.api
+
     collection_path "collections/:collection_id/items"
     resource_path "items/:id"
-    
+
     belongs_to :collection
     has_many :comments
     custom_get :count
-    
+
     method_for :update, :post
-    
+
     store_metadata :_metadata # conflicted with actual item metadata
-    
+
     after_initialize do |i|
       i.metadata = i._metadata unless i.has_attribute?('metadata')
       begin
@@ -20,7 +22,7 @@ module Dropmark
       rescue
       end
     end
-    
+
     def self.sort(id, order)
       items = Dropmark::Collection.new(:id => id).sort_items(order)
     end

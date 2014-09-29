@@ -8,7 +8,6 @@ module Dropmark
 
     belongs_to :collection
     has_many :comments
-    has_many :tags
     custom_get :count
 
     method_for :update, :post

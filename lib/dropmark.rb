@@ -22,12 +22,12 @@ module Dropmark
   def self.configure(&blk)
     options = OpenStruct.new
     yield(options)
-    
+
     @api_key = options.try(:api_key)
     @api_base = options.try(:api_base) || 'https://api.dropmark.com/v1'
     @user_id = options.try(:user_id)
     @user_token = options.try(:user_token)
-    
+
     @api = Her::API.new
     @api.setup :url => @api_base do |c|
       c.use Faraday::Response::Logger
@@ -43,6 +43,7 @@ module Dropmark
     require 'dropmark/comment'
     require 'dropmark/item'
     require 'dropmark/user'
+    require 'dropmark/team'
   end
 
 end

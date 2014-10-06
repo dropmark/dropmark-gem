@@ -8,5 +8,9 @@ module Dropmark
 
     has_many :items
     has_many :collections
+    
+    def self.by_q(q)
+      self.get('search', q: q)
+    end
   end
 end

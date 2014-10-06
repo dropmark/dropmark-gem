@@ -1,17 +1,17 @@
 PATH
   remote: .
   specs:
-    dropmark (0.1.5)
+    dropmark (0.1.6)
       her
       mime-types
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (4.1.5)
-      activesupport (= 4.1.5)
+    activemodel (4.1.6)
+      activesupport (= 4.1.6)
       builder (~> 3.1)
-    activesupport (4.1.5)
+    activesupport (4.1.6)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -27,8 +27,8 @@ GEM
       multi_json (~> 1.7)
     i18n (0.6.11)
     json (1.8.1)
-    mime-types (1.25.1)
-    minitest (5.4.1)
+    mime-types (2.3)
+    minitest (5.4.2)
     multi_json (1.10.1)
     multipart-post (2.0.0)
     thread_safe (0.3.4)

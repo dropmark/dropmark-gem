@@ -41,6 +41,7 @@ module Dropmark
     require 'dropmark/model'
     require 'dropmark/collection'
     require 'dropmark/comment'
+    require 'dropmark/tag'
     require 'dropmark/item'
     require 'dropmark/user'
     require 'dropmark/team'

@@ -1,11 +1,13 @@
 module Dropmark
-  class Tag < Model
+  class Expand < Model
     include Her::Model
     uses_api Dropmark.api
-    has_many :items
+
+    collection_path "expand"
+    resource_path "expand"
     
     def self.get(params)
-      super('tags', params)
+      super('expand', params)
     end
   end
 end

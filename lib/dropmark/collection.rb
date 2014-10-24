@@ -3,9 +3,12 @@ module Dropmark
     include Her::Model
     uses_api Dropmark.api
 
+    belongs_to :user
     has_many :users
     has_many :items
     custom_get :count
+    
+    accepts_nested_attributes_for :users
 
     after_find do |i|
       begin

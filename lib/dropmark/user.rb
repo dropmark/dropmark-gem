@@ -10,7 +10,10 @@ module Dropmark
     validates :username, format: { with: /\A(?!-)([a-z0-9-]{0,49}[a-z0-9])\z/i }
 
     has_many :collections
+    has_many :tags
+    has_many :teams
     custom_get :contacts
+    custom_get :objects
 
     after_find do |i|
       begin

@@ -13,7 +13,6 @@ module Dropmark
     has_many :tags
     has_many :teams
     custom_get :contacts
-    custom_get :objects
 
     after_find do |i|
       begin

@@ -3,7 +3,6 @@ module Dropmark
     include Her::Model
     uses_api Dropmark.api
 
-    attributes :name, :email, :password, :username
     validates :name, presence: true
     validates :email, format: { with: /\A([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}\z/ix }
     validates :password, length: { minimum: 6 }
@@ -12,6 +11,8 @@ module Dropmark
     has_many :collections
     has_many :tags
     has_many :teams
+    has_many :emails
+    
     custom_get :contacts
 
     after_find do |i|

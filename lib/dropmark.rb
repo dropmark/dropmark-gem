@@ -44,6 +44,7 @@ module Dropmark
     require 'dropmark/tag'
     require 'dropmark/item'
     require 'dropmark/user'
+    require 'dropmark/email'
     require 'dropmark/team'
     require 'dropmark/search'
     require 'dropmark/expand'

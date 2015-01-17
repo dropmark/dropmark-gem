@@ -4,7 +4,7 @@ module Dropmark
     uses_api Dropmark.api
 
     validates :name, presence: true
-    validates :email, format: { with: /\A([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}\z/ix }
+    validates :email, format: { with: /\A([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,63}\z/ix }
     validates :password, length: { minimum: 6 }
     validates :username, format: { with: /\A(?!-)([a-z0-9-]{0,49}[a-z0-9])\z/i }
 

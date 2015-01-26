@@ -57,7 +57,7 @@ collection = Dropmark::Collection.create(
   type:          'private',          # optional ('private', 'public', 'global')
   sort_by:       'created_at',       # optional ('name', 'created_at', 'updated_at')
   sort_order:    'desc',             # optional ('asc', 'desc')
-  thumbnails:    'square',           # optional ('square', 'full')
+  view:          'square',           # optional ('tile', 'shelf')
   labels:        'true',             # optional ('true', 'false')
 )
 

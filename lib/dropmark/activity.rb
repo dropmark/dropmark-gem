@@ -1,11 +1,11 @@
 module Dropmark
-  class Search < Model
+  class Activity < Model
     include Her::Model
     uses_api Dropmark.api
 
     def self.new(params = {})
       case params[:type]
-      when 'collection'
+      when 'collection', 'invite'
         return Collection.new(params)
       when 'comment'
         return Comment.new(params)
@@ -15,7 +15,7 @@ module Dropmark
     end
     
     def self.get(params)
-      super('search', params)
+      super('activity', params)
     end
   end
 end

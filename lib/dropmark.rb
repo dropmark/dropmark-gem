@@ -46,6 +46,7 @@ module Dropmark
     require 'dropmark/user'
     require 'dropmark/email'
     require 'dropmark/team'
+    require 'dropmark/activity'
     require 'dropmark/search'
     require 'dropmark/expand'
   end

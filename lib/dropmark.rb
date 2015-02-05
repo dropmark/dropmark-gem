@@ -6,6 +6,7 @@ require 'ostruct'
 require 'rbconfig'
 require 'dropmark/version'
 require 'dropmark/authentication'
+require 'dropmark/parser'
 require 'dropmark/error'
 require 'dropmark/file'
 
@@ -34,7 +35,7 @@ module Dropmark
       c.use Dropmark::Authentication
       c.use Faraday::Request::Multipart
       c.use Faraday::Request::UrlEncoded
-      c.use Her::Middleware::DefaultParseJSON
+      c.use Dropmark::Parser
       c.use Faraday::Adapter::NetHttp
       c.use Dropmark::Error::RaiseError
     end

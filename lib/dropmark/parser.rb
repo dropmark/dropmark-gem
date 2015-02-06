@@ -2,11 +2,14 @@ module Dropmark
   class Parser < Her::Middleware::ParseJSON
 
     def parse(body, headers = {})
-      metadata = {}
-      metadata[:total_count] = headers['x-total-count'].try(:to_i) if headers['x-total-count']
       json = parse_json(body)
+      errors = json.delete(:errors) || {}
+      metadata = json.delete(:metadata) || {}
+      metadata[:total_count] = headers['x-total-count'].try(:to_i) if headers['x-total-count']
+
       {
         :data => json,
+        :errors => errors,
         :metadata => metadata
       }
     end

@@ -25,6 +25,11 @@ module Dropmark
       rescue
       end
     end
+    
+    # Dropmark can return multiple items in a single create
+    def self.create(attributes)
+      items = self.post("collections/#{attributes['collection_id']}/items", attributes)
+    end
 
     def self.sort(id, order)
       items = Dropmark::Collection.new(:id => id).sort_items(order)

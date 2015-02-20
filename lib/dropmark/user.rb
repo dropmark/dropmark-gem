@@ -8,11 +8,12 @@ module Dropmark
     validates :password, length: { minimum: 6 }
     validates :username, format: { with: /\A(?!-)([a-z0-9-]{0,49}[a-z0-9])\z/i }
 
+    has_many :highlighted_collections, class_name: "Collection"
     has_many :collections
     has_many :tags
     has_many :teams
     has_many :emails
-    
+
     custom_get :contacts
 
     after_find do |i|

@@ -10,6 +10,7 @@ module Dropmark
     has_many :comments
     has_many :items
     has_one :user
+    has_one :parent, class_name: "Item"
     has_one :prev, class_name: "Item"
     has_one :next, class_name: "Item"
     custom_get :count

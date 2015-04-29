@@ -8,7 +8,9 @@ module Dropmark
 
     belongs_to :collection
     has_many :comments
+    has_many :items
     has_one :user
+    has_one :parent, class_name: "Item"
     has_one :prev, class_name: "Item"
     has_one :next, class_name: "Item"
     custom_get :count
@@ -25,7 +27,7 @@ module Dropmark
       rescue
       end
     end
-    
+
     # Dropmark can return multiple items in a single create
     def self.create(attributes)
       items = self.post("collections/#{attributes['collection_id']}/items", attributes)

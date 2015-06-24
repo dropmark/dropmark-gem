@@ -17,12 +17,10 @@ module Dropmark
 
     method_for :update, :post
 
-    # Commented-out because of https://github.com/dropmark/dropmark-gem/issues/11
-    # store_metadata :_metadata # conflicted with actual item metadata
+    store_metadata :_metadata # conflicted with actual item metadata
 
     after_initialize do |i|
-      # Commented-out because of https://github.com/dropmark/dropmark-gem/issues/11
-      # i.metadata = i._metadata unless i.has_attribute?('metadata')
+      i.metadata = i._metadata unless i.has_attribute?('metadata')
       begin
         i.created_at = Time.parse(i.created_at)
         i.updated_at = Time.parse(i.updated_at)

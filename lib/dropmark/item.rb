@@ -3,7 +3,7 @@ module Dropmark
     include Her::Model
     uses_api Dropmark.api
 
-    collection_path "collections/:collection_id/items"
+    collection_path "items"
     resource_path "items/:id"
 
     belongs_to :collection
@@ -35,6 +35,10 @@ module Dropmark
 
     def self.sort(id, order)
       items = Dropmark::Collection.new(:id => id).sort_items(order)
+    end
+
+    def self.add_tag(attributes)
+      self.post("items/#{attributes['id']}/tags", attributes)
     end
   end
 end

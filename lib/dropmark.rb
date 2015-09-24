@@ -50,6 +50,7 @@ module Dropmark
     require 'dropmark/activity'
     require 'dropmark/search'
     require 'dropmark/expand'
+    require 'dropmark/extract'
   end
 
 end

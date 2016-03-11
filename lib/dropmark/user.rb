@@ -18,7 +18,7 @@ module Dropmark
     store_metadata :_metadata # conflicted with actual user metadata
 
     after_find do |response|
-      process_response(response)
+      User.process_response(response)
     end
 
     def request_path

@@ -17,14 +17,8 @@ module Dropmark
     custom_get :contacts
     store_metadata :_metadata # conflicted with actual user metadata
 
-    after_find do |i|
-      i.metadata = i._metadata unless i.has_attribute?('metadata')
-
-      begin
-        i.created_at = Time.parse(i.created_at)
-        i.updated_at = Time.parse(i.updated_at)
-      rescue
-      end
+    after_find do |response|
+      process_response(response)
     end
 
     def request_path
@@ -35,6 +29,14 @@ module Dropmark
       end
     end
 
+    def self.find_where(params)
+      if response = self.get('users', params)
+        process_response(response)
+      end
+
+      response
+    end
+
     def self.auth(params)
       if response = self.post('auth', params)
         Dropmark.user_id = response.try(:id)
@@ -42,5 +44,18 @@ module Dropmark
       end
       response
     end
+
+    private
+      def self.process_response(response)
+        response.metadata = response._metadata unless response.has_attribute?('metadata')
+
+        begin
+          response.created_at = Time.parse(response.created_at)
+          response.updated_at = Time.parse(response.updated_at)
+        rescue
+        end
+
+        response
+      end
   end
 end

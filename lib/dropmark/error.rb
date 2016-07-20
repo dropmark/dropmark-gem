@@ -11,10 +11,10 @@ module Dropmark
           body[:message] if body.has_key?(:message)
         end
       end
-      
+
       def on_complete(env)
         return if (status = env[:status]) < 400 # Ignore any non-error response codes
-        
+
         message = parse(env[:body])
         case status
         when 400
@@ -23,6 +23,8 @@ module Dropmark
           raise Dropmark::Error::Forbidden, message
         when 404
           raise Dropmark::Error::NotFound, message
+        when 409
+          raise Dropmark::Error::Conflict, message
         else
           raise Dropmark::Error::ServerError, message # Treat any other errors as 500
         end

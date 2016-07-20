@@ -1,6 +1,7 @@
 module Dropmark
   module Error
     class BadRequest < StandardError; end
+    class Conflict < StandardError; end
     class Forbidden < StandardError; end
     class NotFound < StandardError; end
     class ServerError < StandardError; end

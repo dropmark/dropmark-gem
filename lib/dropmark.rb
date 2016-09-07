@@ -52,6 +52,7 @@ module Dropmark
     require 'dropmark/search'
     require 'dropmark/expand'
     require 'dropmark/extract'
+    require 'dropmark/upload'
   end
 
 end

@@ -33,6 +33,10 @@ module Dropmark
       items = self.post("collections/#{attributes['collection_id']}/items", attributes)
     end
 
+    def self.copy(attributes)
+      items = self.post("items/copy", attributes)
+    end
+
     def self.sort(id, order)
       items = Dropmark::Collection.new(:id => id).sort_items(order)
     end

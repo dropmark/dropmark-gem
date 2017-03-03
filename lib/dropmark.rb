@@ -54,7 +54,7 @@ module Dropmark
     require 'dropmark/extract'
     require 'dropmark/upload'
     require 'dropmark/integration'
+    require 'dropmark/saml'
   end
 
 end
-

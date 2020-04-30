@@ -5,6 +5,7 @@ module Dropmark
     class Forbidden < StandardError; end
     class NotFound < StandardError; end
     class ServerError < StandardError; end
+    class Unauthorized < StandardError; end
 
     class RaiseError < Faraday::Response::Middleware
       def parse(body)
@@ -20,6 +21,8 @@ module Dropmark
         case status
         when 400
           raise Dropmark::Error::BadRequest, message
+        when 401
+          raise Dropmark::Error::Unauthorized, message
         when 403
           raise Dropmark::Error::Forbidden, message
         when 404

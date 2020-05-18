@@ -9,6 +9,7 @@ require 'dropmark/authentication'
 require 'dropmark/parser'
 require 'dropmark/error'
 require 'dropmark/file'
+require 'patches/her'
 
 module Dropmark
 

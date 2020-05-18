@@ -40,6 +40,7 @@ module Dropmark
       c.use Dropmark::Error::RaiseError
     end
     require 'dropmark/model'
+    require 'dropmark/metadata'
     require 'dropmark/collection'
     require 'dropmark/comment'
     require 'dropmark/reaction'
